@@ -58,8 +58,8 @@ WHERE `Got Deal`= 1
 GROUP BY Industry;
 
 
---  8. How much did Barbara Corcoran typically invest in startups, and what equity did she receive?
-SELECT * FROM data;
+--  8. How much did Barbara Corcoran typically invest in startups, and what equity did she receive?\
+ (SELECT * FROM `data`);
 
 SELECT sum(`Barbara Corcoran Investment Amount`),`Total Amount`, sum(`Barbara Corcoran Investment Equity`) `Total equity` from data;
 -- 9. How much did Mark Cuban typically invest in startups, and what equity did he receive?
@@ -113,41 +113,61 @@ ORDER BY (`investment amount per shark`) DESC
 LIMIT 0,5;
 
 -- 15.  Which shark has invested the most money in businesses related to the food and beverage industry?
+-- Note: apply CTE= Common Table Expression
 
-SELECT* FROM data;
+ SELECT * FROM data;
 CREATE VIEW  `max investment by the sharks` AS
-WITH W as(
-SELECT "Barbara Corcoran", max(`Barbara Corcoran Investment Amount`) max FROM data
+With W AS (
+SELECT "Barbara Corcoran" AS NAME, max(`Barbara Corcoran Investment Amount`) max FROM data
 where  Industry= "food and beverage"
 UNION
 
-SELECT "Mark Cuban", max(`Mark Cuban Investment Amount`) max FROM data
+SELECT "Mark Cuban" AS NAME, max(`Mark Cuban Investment Amount`) max FROM data
 where  Industry= "food and beverage"
 UNION
 
-SELECT "Lori Greiner", max(`Lori Greiner Investment Amount`) max FROM data
+SELECT "Lori Greiner" AS NAME, max(`Lori Greiner Investment Amount`) max FROM data
 where  Industry= "food and beverage"
 UNION
 
-SELECT "Robert Herjavec", max(`Robert Herjavec Investment Amount`) max FROM data
+SELECT "Robert Herjavec" AS NAME, max(`Robert Herjavec Investment Amount`) max FROM data
 where  Industry= "food and beverage"
 UNION
 
-SELECT "Daymond John", max(`Daymond John Investment Amount`) max FROM data
+SELECT "Daymond John" AS NAME, max(`Daymond John Investment Amount`) max FROM data
 where  Industry= "food and beverage"
 UNION
 
-SELECT "Kevin O Leary", max(`Kevin O Leary Investment Amount`) max FROM data
+SELECT "Kevin O Leary" AS NAME, max(`Kevin O Leary Investment Amount`) max FROM data
 where  Industry= "food and beverage")
-
 SELECT * FROM W
 WHERE Max =(SELECT max(max) from W);
 
+-- To get total amount invested on food and beverages by sharks
 
+CREATE VIEW `Total investment by sharks on food and beverages` AS
+SELECT "Barbara Corcoran" AS NAME, sum(`Barbara Corcoran Investment Amount`) `Total Amount` FROM data
+where  Industry= "food and beverage"
+UNION
 
--- CTE= Common Table Expression
+SELECT "Mark Cuban" AS NAME, sum(`Mark Cuban Investment Amount`) `Total Amount` FROM data
+where  Industry= "food and beverage"
+UNION
 
+SELECT "Lori Greiner" AS NAME, sum(`Lori Greiner Investment Amount`) `Total Amount` FROM data
+where  Industry= "food and beverage"
+UNION
 
+SELECT "Robert Herjavec" AS NAME, sum(`Robert Herjavec Investment Amount`) `Total Amount` FROM data
+where  Industry= "food and beverage"
+UNION
+
+SELECT "Daymond John" AS NAME, sum(`Daymond John Investment Amount`) `Total Amount` FROM data
+where  Industry= "food and beverage"
+UNION
+
+SELECT "Kevin O Leary" AS NAME, sum(`Kevin O Leary Investment Amount`) `Total Amount` FROM data
+where  Industry= "food and beverage";
 
 -- 16. Are there any trends in the industries or product categories that tend to receive higher valuation offers from the sharks?
 -- Note;;; once you hear trend, the best visualization chart is scatter area chart. it is use to monitor trend relationship. 

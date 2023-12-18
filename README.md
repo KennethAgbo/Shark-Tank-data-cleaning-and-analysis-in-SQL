@@ -1,37 +1,14 @@
-# INTRODUCTION TO PYTHON
+DATA CLEANING AND ANALYSIS ON SHARK TANK DATASET IN SQL AND POWER BI
+In this project,  my objective is to find the relationship and trend existing among variables which will aid investment decision making in Shark tank. 
 
-What is Python?
-Python is a popular programming language. It was created by Guido van Rossum, and released in 1991.
+Overall, I worked with a Shark Tank dataset with over 50 columns from the period, 2009 to 2019.  I explore the dataset in SQL  using: DESCRIBE  data; 
+I inspected and cleaned the data by ensuring that all the variables have the right datatypes and also updated the missing values. Both data cleaning and data analysis were performed on SQL while visualization is in Power BI. I created two dashboards (Pitchers, and Sharks ).
 
-It is used for:
+Shark Tank is an American business reality television series that premiered on August  9, 2009, on American  Broadcasting Company (ABC). It is a popular reality show in which wealthy investors valuate startups who pitch for funding.  The investors (Sharks) use several valuation techniques to debunk or concur with the owner's(Pitchers') valuation and decide whether to grant them funding in return for an ownership stake.
 
-web development (server-side),
-software development,
-mathematics,
-system scripting.
-What can Python do?
-Python can be used on a server to create web applications.
-Python can be used alongside software to create workflows.
-Python can connect to database systems. It can also read and modify files.
-Python can be used to handle big data and perform complex mathematics.
-Python can be used for rapid prototyping, or for production-ready software development.
-Why Python?
-Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc).
-Python has a simple syntax similar to the English language.
-Python has syntax that allows developers to write programs with fewer lines than some other programming languages.
-Python runs on an interpreter system, meaning that code can be executed as soon as it is written. This means that prototyping can be very quick.
-Python can be treated in a procedural way, an object-oriented way or a functional way.
+The analyses show that out of 531 Pitchers only 286 pitchers secured a deal with the Sharks. And the total amount invested by Sharks is 81.59M while total equity received by Sharks is 8.13K. Furthermore, Pitchers' dashboard illustrates how Food and Beverage is the most represented industry and Automotive industries received the highest average deal valuation. Ethan Tucker and Pat Boone(Multiple Pitchers) is the entrepreneur that secured the largest deal in Shark Tank. On the other hand, I used scatter chart in Sharks Dashboard to capture the trend existing between Sum of Valuation Requested and Sum of Deal Valuation. It shows a positive relationship. This means that the higher the   Sum of Valuation Requested, the higher the Sum of Deal Valuation. I also observed that the  Sum of Valuation Requested as shown on the scatter chart is always greater than the Sum of Deal Valuation in the Shark Tank. Consequently, this will aid sharks in making improved investment decisions.
 
-Python was designed for readability, and has some similarities to the English language with influence from mathematics.
-Python uses new lines to complete a command, as opposed to other programming languages which often use semicolons or parentheses.
-Python relies on indentation, using whitespace, to define scope; such as the scope of loops, functions and classes. Other programming languages often use curly-brackets for this purpose.
-ExampleGet your own Python Server
-print("Hello, World!")
-
-
-JupyterLab: A Next-Generation Notebook Interface
-JupyterLab is the latest web-based interactive development environment for notebooks, code, and data. 
-Its flexible interface allows users to configure and arrange workflows in data science, scientific computing, computational journalism, and machine learning. A modular design invites extensions to expand and enrich functionality.
+My special appreciation goes to Kazeem Musbau for his guidance and support as I continue my internship in Lagos School of Programming (LASOP)
 
 
 
